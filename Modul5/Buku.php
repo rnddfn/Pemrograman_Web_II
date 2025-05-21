@@ -1,13 +1,3 @@
-<?php 
-require 'model.php';
-$query = getData("SELECT * FROM buku");
-
-if(isset($_GET['id_buku'])) {
-    deleteData("buku", "id_buku", $_GET['id_buku']);
-    header("Location: Buku.php");
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,14 +24,14 @@ if(isset($_GET['id_buku'])) {
         <tbody>
             <?php foreach ($query as $result): ?>    
             <tr>
-            <th scope="col"><?php echo $result['id_buku'];?></th>
-            <td><?php echo $result['judul_buku'];?></td>
-            <td><?php echo $result['penulis'];?></td>
-            <td><?php echo $result['penerbit'];?></td>
-            <td><?php echo $result['tahun_terbit'];?></td>
+            <th></th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
             <td>    
-                <a href="formbuku.php?id_buku=<?= $result['id_buku']; ?>" class="btn btn-success">Edit</a>
-                <a href="buku.php?id_buku=<?= $result['id_buku']; ?>" class="btn btn-danger" onclick="return confirm('Apakah kamu yakin ingin menghapus data ini?')">Hapus</a>
+                <a href="" class="btn btn-success">Edit</a>
+                <a href="" class="btn btn-danger" onclick="return confirm('Apakah kamu yakin ingin menghapus data ini?')">Hapus</a>
             </td>
             </tr>
             <?php
